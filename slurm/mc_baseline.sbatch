@@ -14,7 +14,7 @@ SEED=42
 # Work around weird Slurm mem conflict
 unset SLURM_MEM_PER_CPU SLURM_MEM_PER_GPU SLURM_MEM_PER_NODE
 
-srun --mpi=pmix ./src/mpi_hello \
+srun ./src/mpi_hello \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
     --output "results/mc_baseline_${SLURM_JOB_ID}.csv"
