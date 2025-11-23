@@ -11,6 +11,9 @@ source env/load_modules.sh
 TOTAL_SAMPLES=100000000           # 1e8, adjust later
 SEED=42
 
+# Work around weird Slurm mem conflict
+unset SLURM_MEM_PER_CPU SLURM_MEM_PER_GPU SLURM_MEM_PER_NODE
+
 srun --mpi=pmix ./src/mpi_hello \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
