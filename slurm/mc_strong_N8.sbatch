@@ -6,13 +6,15 @@
 #SBATCH -t 00:05:00
 #SBATCH -o results/mc_strong_N8_%j.out
 
-module purge
 source env/load_modules.sh
 
 TOTAL_SAMPLES=1000000000         # fixed global samples (e.g. 1e9)
 SEED=42
 
-srun --mpi=pmix ./src/hello_mpi \
+# Work around weird Slurm mem conflict
+unset SLURM_MEM_PER_CPU SLURM_MEM_PER_GPU SLURM_MEM_PER_NODE
+
+srun ./src/mpi_hello \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
     --output "results/mc_strong_N8_${SLURM_JOB_ID}.csv"
