@@ -2,8 +2,7 @@
 #SBATCH -J mc-baseline
 #SBATCH -A def-sponsor00        
 #SBATCH -N 1                      # 1 node
-#SBATCH --ntasks-per-node=32      # TODO: match cores per node on Magic Castle, check with sinfo -o "%N %c %G" or scontrol show node | egrep "NodeName=|CPUTot="
-#SBATCH -t 00:05:00
+#SBATCH --ntasks-per-node=2       # match CPUS from sinfo for node[1-6] Magic Castle, checked with sinfo -o "%N %c %G"
 #SBATCH -o results/mc_baseline_%j.out
 
 module purge

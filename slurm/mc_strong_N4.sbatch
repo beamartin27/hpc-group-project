@@ -2,7 +2,7 @@
 #SBATCH -J mc-strong-N4
 #SBATCH -A def-sponsor00
 #SBATCH -N 4
-#SBATCH --ntasks-per-node=32     # same ranks per node
+#SBATCH --ntasks-per-node=2     # same ranks per node
 #SBATCH -t 00:05:00
 #SBATCH -o results/mc_strong_N4_%j.out
 

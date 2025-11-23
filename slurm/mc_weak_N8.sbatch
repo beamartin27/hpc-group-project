@@ -2,7 +2,7 @@
 #SBATCH -J mc-weak-N8
 #SBATCH -A def-sponsor00
 #SBATCH -N 2
-#SBATCH --ntasks-per-node=32
+#SBATCH --ntasks-per-node=2
 #SBATCH -t 00:05:00
 #SBATCH -o results/mc_weak_N8_%j.out
 
