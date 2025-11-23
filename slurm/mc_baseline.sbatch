@@ -12,7 +12,7 @@ source env/load_modules.sh
 TOTAL_SAMPLES=100000000           # 1e8, adjust later
 SEED=42
 
-srun --mpi=pmix ./src/montecarlo_mpi \
+srun --mpi=pmix ./src/hello_mpi \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
     --output "results/mc_baseline_${SLURM_JOB_ID}.csv"

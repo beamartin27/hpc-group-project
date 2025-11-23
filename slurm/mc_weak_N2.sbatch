@@ -16,7 +16,7 @@ TOTAL_RANKS=$((NODES * RANKS_PER_NODE))
 TOTAL_SAMPLES=$((TOTAL_RANKS * SAMPLES_PER_RANK))
 SEED=42
 
-srun --mpi=pmix ./src/montecarlo_mpi \
+srun --mpi=pmix ./src/hello_mpi \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
     --output "results/mc_weak_N2_${SLURM_JOB_ID}.csv"

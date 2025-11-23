@@ -10,6 +10,9 @@
 - `mc_weak_N4.sbatch`: weak-scaling run on 4 nodes.
 - `mc_weak_N8.sbatch`: weak-scaling run on 8 nodes.
 
+> Note: For weak scaling, we want constant work per rank: `TOTAL_SAMPLES = SAMPLES_PER_RANK × (nodes × ranks_per_node)`
+> Let’s assume our program takes a total samples argument (--samples), and each rank will do total_samples / world_size internally.
+
 Each script:
 - Loads modules via `env/load_modules.sh`.
 - Runs `./src/montecarlo_mpi` with `--samples`, `--seed`, `--output`.

@@ -12,7 +12,7 @@ source env/load_modules.sh
 TOTAL_SAMPLES=1000000000         # fixed global samples (e.g. 1e9)
 SEED=42
 
-srun --mpi=pmix ./src/montecarlo_mpi \
+srun --mpi=pmix ./src/hello_mpi \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
     --output "results/mc_strong_N4_${SLURM_JOB_ID}.csv"
