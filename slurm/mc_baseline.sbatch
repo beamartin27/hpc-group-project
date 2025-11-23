@@ -14,6 +14,9 @@ SEED=42
 # Work around weird Slurm mem conflict
 unset SLURM_MEM_PER_CPU SLURM_MEM_PER_GPU SLURM_MEM_PER_NODE
 
+# Hide spam output
+export OMPI_MCA_mtl=^ofi
+
 srun ./src/mpi_hello \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
