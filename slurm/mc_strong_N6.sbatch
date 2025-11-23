@@ -4,7 +4,7 @@
 #SBATCH -N 6                    # Because there are only 6 CPU nodes available
 #SBATCH --ntasks-per-node=2     # same ranks per node
 #SBATCH -t 00:05:00
-#SBATCH -o results/mc_strong_N8_%j.out
+#SBATCH -o results/mc_strong_N6_%j.out
 
 source env/load_modules.sh
 
@@ -17,4 +17,4 @@ unset SLURM_MEM_PER_CPU SLURM_MEM_PER_GPU SLURM_MEM_PER_NODE
 srun ./src/mpi_hello \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
-    --output "results/mc_strong_N8_${SLURM_JOB_ID}.csv"
+    --output "results/mc_strong_N6_${SLURM_JOB_ID}.csv"
