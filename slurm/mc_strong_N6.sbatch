@@ -2,7 +2,8 @@
 #SBATCH -J mc-strong-N8
 #SBATCH -A def-sponsor00
 #SBATCH -N 6                    # Because there are only 6 CPU nodes available
-#SBATCH --ntasks-per-node=2     # same ranks per node
+#SBATCH --ntasks-per-node=2
+     # same ranks per node
 #SBATCH -t 00:05:00
 #SBATCH -o results/mc_strong_N6_%j.out
 

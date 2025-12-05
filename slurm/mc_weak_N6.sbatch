@@ -3,6 +3,7 @@
 #SBATCH -A def-sponsor00
 #SBATCH -N 6                   # only 6 CPUs available
 #SBATCH --ntasks-per-node=2
+
 #SBATCH -t 00:05:00
 #SBATCH -o results/mc_weak_N6_%j.out
 
