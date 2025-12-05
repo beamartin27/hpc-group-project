@@ -1,8 +1,11 @@
 # src/Makefile
 CC=mpicc
-CFLAGS=-O3
+CFLAGS=-O3 -fopenmp
 
-all: mpi_hello
+all: montecarlo_mpi
 
-mpi_hello: mpi_hello.c
-	$(CC) $(CFLAGS) -o mpi_hello mpi_hello.c
+montecarlo_mpi: montecarlo_mpi.c
+	$(CC) $(CFLAGS) -o montecarlo_mpi montecarlo_mpi.c
+
+clean:
+	rm -f montecarlo_mpi

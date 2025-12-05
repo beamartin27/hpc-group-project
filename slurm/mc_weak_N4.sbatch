@@ -18,7 +18,9 @@ SEED=42
 # Work around weird Slurm mem conflict
 unset SLURM_MEM_PER_CPU SLURM_MEM_PER_GPU SLURM_MEM_PER_NODE
 
-srun ./src/mpi_hello \
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun ./src/montecarlo_mpi \
     --samples "${TOTAL_SAMPLES}" \
     --seed "${SEED}" \
     --output "results/mc_weak_N4_${SLURM_JOB_ID}.csv"
