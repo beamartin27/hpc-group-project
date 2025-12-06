@@ -1,0 +1,41 @@
+Running perf stat...
+
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS: 
+libgomp: Invalid value for environment variable OMP_NUM_THREADS: 
+Run completed: Pi = 3.1416645200, Time = 0.235090 s
+
+ Performance counter stats for './src/montecarlo_mpi --samples 100000000 --seed 42 --output /dev/null':
+
+   <not supported>      cycles:u                                                              
+   <not supported>      instructions:u                                                        
+   <not supported>      cache-references:u                                                    
+   <not supported>      cache-misses:u                                                        
+
+       0.521174356 seconds time elapsed
+
+       0.253165000 seconds user
+       0.019816000 seconds sys
+
+
+
+ Performance counter stats for './src/montecarlo_mpi --samples 100000000 --seed 42 --output /dev/null':
+
+   <not supported>      cycles:u                                                              
+   <not supported>      instructions:u                                                        
+   <not supported>      cache-references:u                                                    
+   <not supported>      cache-misses:u                                                        
+
+       0.535614055 seconds time elapsed
+
+       0.254000000 seconds user
+       0.018348000 seconds sys
+
+
+Running perf record...
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS: 
+Run completed: Pi = 3.1414667600, Time = 0.460193 s
+[ perf record: Woken up 9225 times to write data ]
+[ perf record: Captured and wrote 0.161 MB results/perf_%j.data (1916 samples) ]
+Profiling done. Analyze with: perf report -i results/perf_<jobid>.data

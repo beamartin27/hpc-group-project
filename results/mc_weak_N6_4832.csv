@@ -1,0 +1,2 @@
+ranks,threads,total_samples,pi_estimate,elapsed_sec,compute_sec,comm_sec
+12,1,600000000,3.1414637800,0.246134,0.145206,0.100928
